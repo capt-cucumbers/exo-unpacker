@@ -1,0 +1,17 @@
+[project]
+name = "eXo Unpacker"
+package = "exo_unpacker"
+venv = ".venv"
+default = "cli"
+elevate = false
+
+[commands]
+cli = { cmd = ["python", "-m", "exo_unpacker.cli"], description = "Command-line interface" }
+list = { cmd = ["python", "-m", "exo_unpacker.cli", "list"], description = "List cached games" }
+search = { cmd = ["python", "-m", "exo_unpacker.cli", "search"], description = "Search games by title, genre, or developer" }
+unpack = { cmd = ["python", "-m", "exo_unpacker.cli", "unpack"], description = "Unpack a single game" }
+unpack-release = { cmd = ["python", "-m", "exo_unpacker.cli", "unpack-release"], description = "Unpack every game in a release" }
+unpack-all = { cmd = ["python", "-m", "exo_unpacker.cli", "unpack-all"], description = "Unpack every release" }
+clear = { cmd = ["python", "-m", "exo_unpacker.cli", "clear"], description = "Delete a game's output and manifest entry" }
+clean = { cmd = ["python", "-m", "exo_unpacker.cli", "clean"], description = "Delete all output roots" }
+cache-db = { cmd = ["python", "-m", "exo_unpacker.cli", "cache-db"], description = "Cache the release metadata database" }

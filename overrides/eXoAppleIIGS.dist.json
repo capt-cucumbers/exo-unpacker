@@ -1,0 +1,9 @@
+{
+    "UUID-here": {
+        "game_folder": "Current Folder Name",
+        "overrides": {
+            "folder_name": "Overridden Folder Name",
+            "title": "Overridden Title"
+        }
+    }
+}

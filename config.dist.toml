@@ -1,0 +1,198 @@
+# Copy this file to config.toml and fill in all values before running.
+# Every field is required — no defaults are assumed.
+
+[settings]
+# The release key to use when --release is not specified on the command line.
+default_release = "eXoDOS_v6.04"
+
+
+# ---------------------------------------------------------------------------
+# Add one [releases."<key>"] block per eXo collection you want to use.
+# The key must match the value set in default_release (or passed via --release).
+# ---------------------------------------------------------------------------
+
+[releases."eXoAppleIIGS_v1"]
+name = "eXoAppleIIGS v1"
+extractor_type = "exoappleiigs"
+platform = "Apple IIGS"
+source = "eXoAppleIIGS"
+# Path to the root of the release source:
+source_dir = "C:\\Path\\To\\eXoAppleIIGS\\v1"
+game_zips_subdir = "eXoAppleIIGS/eXo/eXoAppleIIGS"
+metadata_zip_subdir = "eXoAppleIIGS/Content/XOAppleIIGSMetadata.zip"
+dos_metadata_zip_subdir = "eXoAppleIIGS/Content/!AppleIIGSmetadata.zip"
+# Subpath within source_dir to the util zip bundle:
+util_zip_subdir = "eXoAppleIIGS/eXo/util/utilAppleIIGS.zip"
+xml_db_path = "xml/all/Apple IIGS.xml"
+# Path to the manifest file (relative to project root or absolute):
+manifest_path = "manifests/eXoAppleIIGS.json"
+ignores_path = "ignores/eXoAppleIIGS.json"
+overrides_path = "overrides/eXoAppleIIGS.json"
+# Destination directories — must include the full PC/{platform}/{source} suffix:
+games_root_dir = "C:\\eXo\\Games\\PC\\Apple IIGS\\eXoAppleIIGS"
+metadata_root_dir = "C:\\eXo\\Metadata\\PC\\Apple IIGS\\eXoAppleIIGS"
+media_root_dir = "C:\\eXo\\Media\\PC\\Apple IIGS\\eXoAppleIIGS"
+# Directory to extract util tools into (absolute path):
+util_root_dir = "C:\\eXo\\Games\\PC\\Apple IIGS\\util"
+# Template (relative to project root) for the bat file written into each game folder:
+setup_template = "templates/exoappleiigs_setup.bat"
+
+[[releases."eXoAppleIIGS_v1".util_sub_extracts]]
+archive_pattern = "EXT*.zip"
+include = ["emulators/", "Emulators/", "mt32/"]
+dest = "{platform_root}"
+
+[[releases."eXoAppleIIGS_v1".util_sub_extracts]]
+archive_pattern = "OPT*.zip"
+include = []
+dest = "{util_root}"
+
+[releases."eXoDOS_v6.04"]
+name = "eXoDOS v6.04"
+extractor_type = "exodos"
+platform = "MS-DOS"
+source = "eXoDOS"
+source_dir = "C:\\Path\\To\\eXoDOS\\v6.04"
+game_zips_subdir = "eXoDOS/eXo/eXoDOS"
+metadata_zip_subdir = "eXoDOS/Content/XODOSMetadata.zip"
+dos_metadata_zip_subdir = "eXoDOS/Content/!DOSmetadata.zip"
+util_zip_subdir = "eXoDOS/eXo/util/util.zip"
+xml_db_path = "xml/all/MS-DOS.xml"
+manifest_path = "manifests/eXoDOS.json"
+ignores_path = "ignores/eXoDOS.json"
+overrides_path = "overrides/eXoDOS.json"
+games_root_dir = "C:\\eXo\\Games\\PC\\MS-DOS\\eXoDOS"
+metadata_root_dir = "C:\\eXo\\Metadata\\PC\\MS-DOS\\eXoDOS"
+media_root_dir = "C:\\eXo\\Media\\PC\\MS-DOS\\eXoDOS"
+util_root_dir = "C:\\eXo\\Games\\PC\\MS-DOS\\util"
+setup_template = "templates/exodos_setup.bat"
+
+[[releases."eXoDOS_v6.04".util_sub_extracts]]
+archive_pattern = "EXT*.zip"
+include = ["emulators/", "Emulators/", "mt32/"]
+dest = "{platform_root}"
+
+[[releases."eXoDOS_v6.04".util_sub_extracts]]
+archive_pattern = "OPT*.zip"
+include = []
+dest = "{util_root}"
+
+[releases."eXoDREAMM_v4.0"]
+name = "eXoDREAMM v4.0"
+extractor_type = "exodreamm"
+platform = "DREAMM"
+source = "eXoDREAMM"
+source_dir = "C:\\Path\\To\\eXoDREAMM\\v4.0"
+game_zips_subdir = "eXoDREAMM/eXo/eXoDREAMM"
+metadata_zip_subdir = "eXoDREAMM/Content/XODREAMMMetadata.zip"
+dos_metadata_zip_subdir = "eXoDREAMM/Content/!DREAMMmetadata.zip"
+util_zip_subdir = "eXoDREAMM/eXo/util/utilDRM.zip"
+xml_db_path = "xml/all/DREAMM.xml"
+manifest_path = "manifests/eXoDREAMM.json"
+ignores_path = "ignores/eXoDREAMM.json"
+overrides_path = "overrides/eXoDREAMM.json"
+games_root_dir = "C:\\eXo\\Games\\PC\\DREAMM\\eXoDREAMM"
+metadata_root_dir = "C:\\eXo\\Metadata\\PC\\DREAMM\\eXoDREAMM"
+media_root_dir = "C:\\eXo\\Media\\PC\\DREAMM\\eXoDREAMM"
+util_root_dir = "C:\\eXo\\Games\\PC\\DREAMM\\util"
+setup_template = "templates/exodreamm_setup.bat"
+
+[[releases."eXoDREAMM_v4.0".util_sub_extracts]]
+archive_pattern = "EXT*.zip"
+include = ["emulators/", "Emulators/", "mt32/"]
+dest = "{platform_root}"
+
+[[releases."eXoDREAMM_v4.0".util_sub_extracts]]
+archive_pattern = "OPT*.zip"
+include = []
+dest = "{util_root}"
+
+[releases."eXoScummVM_v2026.1.0"]
+name = "eXoScummVM v2026.1.0"
+extractor_type = "exoscummvm"
+platform = "ScummVM"
+source = "eXoScummVM"
+source_dir = "C:\\Path\\To\\eXoScummVM\\v2026.1.0"
+game_zips_subdir = "eXoScummVM/eXo/eXoScummVM"
+metadata_zip_subdir = "eXoScummVM/Content/XOScummVMMetadata.zip"
+dos_metadata_zip_subdir = "eXoScummVM/Content/!ScummVMmetadata.zip"
+util_zip_subdir = "eXoScummVM/eXo/util/utilSVM.zip"
+xml_db_path = "xml/all/ScummVM.xml"
+manifest_path = "manifests/eXoScummVM.json"
+ignores_path = "ignores/eXoScummVM.json"
+overrides_path = "overrides/eXoScummVM.json"
+games_root_dir = "C:\\eXo\\Games\\PC\\ScummVM\\eXoScummVM"
+metadata_root_dir = "C:\\eXo\\Metadata\\PC\\ScummVM\\eXoScummVM"
+media_root_dir = "C:\\eXo\\Media\\PC\\ScummVM\\eXoScummVM"
+util_root_dir = "C:\\eXo\\Games\\PC\\ScummVM\\util"
+setup_template = "templates/exoscummvm_setup.bat"
+
+[[releases."eXoScummVM_v2026.1.0".util_sub_extracts]]
+archive_pattern = "EXT*.zip"
+include = ["emulators/", "Emulators/", "mt32/"]
+dest = "{platform_root}"
+
+[[releases."eXoScummVM_v2026.1.0".util_sub_extracts]]
+archive_pattern = "OPT*.zip"
+include = []
+dest = "{util_root}"
+
+[releases."eXoWin3x_v2"]
+name = "eXoWin3x v2"
+extractor_type = "exowin3x"
+platform = "Windows 3.x"
+source = "eXoWin3x"
+source_dir = "C:\\Path\\To\\eXoWin3x\\v2"
+game_zips_subdir = "eXoWin3x/eXo/eXoWin3x"
+metadata_zip_subdir = "eXoWin3x/Content/XOWin3xMetadata.zip"
+dos_metadata_zip_subdir = "eXoWin3x/Content/!Win3Xmetadata.zip"
+util_zip_subdir = "eXoWin3x/eXo/util/util3x.zip"
+xml_db_path = "xml/Windows 3x.xml"
+manifest_path = "manifests/eXoWin3x.json"
+ignores_path = "ignores/eXoWin3x.json"
+overrides_path = "overrides/eXoWin3x.json"
+games_root_dir = "C:\\eXo\\Games\\PC\\Windows 3.x\\eXoWin3x"
+metadata_root_dir = "C:\\eXo\\Metadata\\PC\\Windows 3.x\\eXoWin3x"
+media_root_dir = "C:\\eXo\\Media\\PC\\Windows 3.x\\eXoWin3x"
+util_root_dir = "C:\\eXo\\Games\\PC\\Windows 3.x\\util"
+setup_template = "templates/exowin3x_setup.bat"
+
+[[releases."eXoWin3x_v2".util_sub_extracts]]
+archive_pattern = "EXT*.zip"
+include = ["emulators/", "Emulators/", "mt32/"]
+dest = "{platform_root}"
+
+[[releases."eXoWin3x_v2".util_sub_extracts]]
+archive_pattern = "OPT*.zip"
+include = []
+dest = "{util_root}"
+
+[releases."eXoWin9x_v1"]
+name = "eXoWin9x Vol.1"
+extractor_type = "exowin9x"
+platform = "Windows 9x"
+source = "eXoWin9x"
+source_dir = "C:\\Path\\To\\eXoWin9x\\Vol.1_1994-1996"
+game_zips_subdir = "eXoWin9x/eXo/eXoWin9x"
+metadata_zip_subdir = "eXoWin9x/Content/XOWin9xMetadata.zip"
+dos_metadata_zip_subdir = "eXoWin9x/Content/!Win9Xmetadata.zip"
+util_zip_subdir = "eXoWin9x/eXo/util/utilWin9x.zip"
+xml_db_path = "xml/all/1994-1996.9x"
+manifest_path = "manifests/eXoWin9x.json"
+ignores_path = "ignores/eXoWin9x.json"
+overrides_path = "overrides/eXoWin9x.json"
+games_root_dir = "C:\\eXo\\Games\\PC\\Windows 9x\\eXoWin9x"
+metadata_root_dir = "C:\\eXo\\Metadata\\PC\\Windows 9x\\eXoWin9x"
+media_root_dir = "C:\\eXo\\Media\\PC\\Windows 9x\\eXoWin9x"
+util_root_dir = "C:\\eXo\\Games\\PC\\Windows 9x\\util"
+setup_template = "templates/exowin9x_setup.bat"
+
+[[releases."eXoWin9x_v1".util_sub_extracts]]
+archive_pattern = "EXT*.zip"
+include = ["emulators/", "Emulators/", "mt32/"]
+dest = "{platform_root}"
+
+[[releases."eXoWin9x_v1".util_sub_extracts]]
+archive_pattern = "OPT*.zip"
+include = []
+dest = "{util_root}"
